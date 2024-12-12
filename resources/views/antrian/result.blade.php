@@ -52,6 +52,32 @@
         button:hover {
             background-color: #45a049;
         }
+
+        /* CSS untuk media print */
+        @media print {
+            body {
+                display: block;
+                padding: 0;
+                background-color: #fff;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+                border-radius: 0;
+            }
+            h2, h1 {
+                color: black;
+                text-align: center;
+                font-size: 22px;
+            }
+            .qr-code {
+                text-align: center;
+            }
+            button, form {
+                display: none; /* Sembunyikan tombol dan form saat cetak */
+            }
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
@@ -68,6 +94,7 @@
             <button id="input_baru" type="submit">Input Antrian Baru</button>
         </form>
     </div>
+
     <script>
     function printQRCode() {
         // Menyembunyikan tombol "Cetak QR CODE" sebelum mencetak
@@ -83,7 +110,7 @@
             document.getElementById('input_baru').style.display = 'block';
         }, 1000); // Tambahkan sedikit delay untuk memastikan cetakan selesai
     }
-</script>
+    </script>
 
 </body>
 </html>
